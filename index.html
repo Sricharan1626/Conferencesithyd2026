@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Simple fade-in animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-md z-50">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="#home" class="flex items-center space-x-2">
+                <img src="" alt="Conference 2026 Logo" class="h-12 w-auto">
+                <span class="text-xl font-bold text-blue-800">Conference 2026</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-gray-700 hover:text-blue-600 transition-colors font-medium" href="#home">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
+                <a href="#committees" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Committees</a>
+                 <div class="relative group">
+                    <button class="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center">
+                        For Authors
+                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute left-0 top-full bg-white shadow-lg rounded-md py-2 w-48 z-10 border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity">
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="#">Submission</a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="#">Call for Papers</a>
+                    </div>
+                </div>
+                <a href="#" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-300">Submit Paper</a>
+            </div>
+            <button id="mobile-menu-button" class="text-gray-800 text-2xl md:hidden z-[110]" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 absolute top-full left-0 w-full shadow-lg">
+            <a href="#home" class="block text-gray-700 hover:text-blue-600 py-2">Home</a>
+            <a href="#about" class="block text-gray-700 hover:text-blue-600 py-2">About</a>
+            <a href="#committees" class="block text-gray-700 hover:text-blue-600 py-2">Committees</a>
+            <a href="#" class="block text-gray-700 hover:text-blue-600 py-2">Submission</a>
+             <a href="#" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all w-full text-center">Submit Paper</a>
+        </div>
+    </nav>
+ 
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 bg-white">
+        <div class="flex flex-col items-center text-center px-4 pb-12">
+            <h2 class="text-red-600 text-xl md:text-2xl font-semibold mt-6 animate-fade-in">1st International Conference on</h2>
+            <h1 class="text-blue-800 text-3xl md:text-5xl font-extrabold w-full max-w-4xl mt-2 animate-fade-in">Deep Learning Innovations for Smart Humanized AI (Conference), 2026</h1>
+            <p class="text-gray-700 text-lg md:text-xl mt-4 w-full max-w-3xl animate-fade-in">(Hybrid Mode)</p>
+            <p class="text-gray-600 text-lg md:text-xl mt-2 w-full max-w-3xl animate-fade-in">Date: 17 – 19 December 2026 | Symbiosis Institute of Technology Hyderabad and Hybrid mode</p>
+            <div class="mt-8 w-full max-w-9xl flex justify-center items-center mx-auto rounded-xl overflow-hidden shadow-2xl">
+                <img src="assets/images.jpeg" alt="University Campus Placeholder" class="w-full h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-20 px-6 md:px-16">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">About Conference 2026</h2>
+            <div class="w-24 h-1.5 bg-blue-600 mx-auto"></div>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed mt-4">International Conference on Deep Learning Innovations for Smart Humanized AI</p>
+        </div>
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8 mb-8 shadow-lg border border-blue-100 text-justify">
+                <p class="text-gray-800 leading-relaxed text-lg">The Department of IoT and Intelligent Systems, Symbiosis Institiute of technology Hyderabad, is organizing the International Conference on Deep Learning Innovations for Smart Humanized AI (Conference 2026) from <strong class="text-blue-700">17 – 19 December 2026</strong> in hybrid mode at <strong class="text-blue-700">Symbiosis Institute of Technology Hyderabad</strong> and online.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conference Theme Section -->
+    <section class="bg-gray-50 py-20 px-6 md:px-16">
+        <div class="max-w-6xl mx-auto">
+             <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">Conference Theme</h2>
+                <div class="w-24 h-1.5 bg-blue-600 mx-auto"></div>
+            </div>
+            <div class="bg-white rounded-xl shadow-xl p-8 mb-8">
+                <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg p-6 mb-8 transform hover:scale-105 transition-transform duration-300">
+                    <p class="text-2xl font-semibold text-center">"Generative Artificial Intelligence, Deep Learning and Internet of Things"</p>
+                </div>
+                <p class="text-gray-700 leading-relaxed text-lg text-justify">The theme of Conference 2026 emphasizes the convergence of <strong class="text-blue-700">Generative Artificial Intelligence, Deep Learning, and the Internet of Things (IoT)</strong> to design next-generation intelligent systems that are adaptive, ethical, and human-centric. Generative AI and Deep Learning are revolutionizing domains such as healthcare, autonomous systems, natural language processing, and smart content creation, while IoT provides seamless connectivity and real-time data integration. Together, these technologies are paving the way for innovations in smart cities, communication networks, robotics, and sustainable resource management. By fostering interdisciplinary research and industry collaboration, the theme envisions intelligent ecosystems that enhance quality of life, ensure transparency and inclusivity, and drive societal progress responsibly.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow-xl p-8">
+                <h3 class="text-3xl font-bold text-blue-800 mb-8 text-center">Major Areas to be Covered</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-600 transform hover:translate-x-2 transition-transform duration-300"><p class="text-gray-800 font-medium">Deep Learning Models and Architectures</p></div>
+                        <div class="bg-green-50 rounded-lg p-4 border-l-4 border-green-600 transform hover:translate-x-2 transition-transform duration-300"><p class="text-gray-800 font-medium">Generative AI and Large Language Models</p></div>
+                        <div class="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-600 transform hover:translate-x-2 transition-transform duration-300"><p class="text-gray-800 font-medium">Computer Vision and Pattern Recognition</p></div>
+                        <div class="bg-orange-50 rounded-lg p-4 border-l-4 border-orange-600 transform hover:translate-x-2 transition-transform duration-300"><p class="text-gray-800 font-medium">Natural Language Processing and Conversational AI</p></div>
+                         <div class="bg-red-50 rounded-lg p-4 border-l-4 border-red-600 transform hover:translate-x-2 transition-transform duration-300"><p class="text-gray-800 font-medium">Edge AI and Embedded Intelligence</p></div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-indigo-50 rounded-lg p-4 border-l-4 border-indigo-600 transform hover:translate-x-2 transition-transform duration-300"><p class="text-gray-800 font-medium">AI for Healthcare and Biomedical Systems</p></div>
+                        <div class="bg-pink-50 rounded-lg p-4 border-l-4 border-pink-600 transform hover:translate-x-2 transition-transform duration-300"><p class="text-gray-800 font-medium">AI for Communication Networks and Semantic Systems</p></div>
+                        <div class="bg-yellow-50 rounded-lg p-4 border-l-4 border-yellow-600 transform hover:translate-x-2 transition-transform duration-300"><p class="text-gray-800 font-medium">Smart Sensing, Signal Processing, and IoT Integration</p></div>
+                         <div class="bg-teal-50 rounded-lg p-4 border-l-4 border-teal-600 transform hover:translate-x-2 transition-transform duration-300"><p class="text-gray-800 font-medium">AI for Robotics, Automation, and Human-Robot Interaction</p></div>
+                        <div class="bg-cyan-50 rounded-lg p-4 border-l-4 border-cyan-600 transform hover:translate-x-2 transition-transform duration-300"><p class="text-gray-800 font-medium">Ethical, Fair, and Explainable AI</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Important Dates Section -->
+    <section class="py-20 px-6 md:px-12 bg-white">
+        <div class="text-center">
+             <button class="bg-blue-700 text-white text-lg md:text-xl px-12 py-3 rounded-lg shadow-lg">Important Dates</button>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mt-12 max-w-7xl mx-auto">
+                <div class="flex flex-col items-center p-4 rounded-lg hover:shadow-lg transition-shadow">
+                    <i class="fas fa-calendar-alt text-blue-700 text-5xl"></i>
+                    <p class="text-gray-800 mt-4 font-medium text-center">Call for Papers Starts</p>
+                    <p class="font-bold text-lg">10 January 2026</p>
+                </div>
+                <div class="flex flex-col items-center p-4 rounded-lg hover:shadow-lg transition-shadow">
+                    <i class="fas fa-file-alt text-blue-700 text-5xl"></i>
+                    <p class="text-gray-800 mt-4 font-medium text-center">Full Paper Submission</p>
+                    <p class="font-bold text-lg">10 July 2026</p>
+                </div>
+                <div class="flex flex-col items-center p-4 rounded-lg hover:shadow-lg transition-shadow">
+                   <i class="fas fa-bell text-blue-700 text-5xl"></i>
+                    <p class="text-gray-800 mt-4 font-medium text-center">Acceptance Notification</p>
+                    <p class="font-bold text-lg">30 August 2026</p>
+                </div>
+                <div class="flex flex-col items-center p-4 rounded-lg hover:shadow-lg transition-shadow">
+                    <i class="fas fa-camera text-blue-700 text-5xl"></i>
+                    <p class="text-gray-800 mt-4 font-medium text-center">Camera Ready Manuscript</p>
+                    <p class="font-bold text-lg">10 October 2026</p>
+                </div>
+                <div class="flex flex-col items-center p-4 rounded-lg hover:shadow-lg transition-shadow">
+                     <i class="fas fa-user-check text-blue-700 text-5xl"></i>
+                    <p class="text-gray-800 mt-4 font-medium text-center">Registration Deadline</p>
+                    <p class="font-bold text-lg">10 October 2026</p>
+                </div>
+                 <div class="flex flex-col items-center p-4 rounded-lg hover:shadow-lg transition-shadow">
+                    <i class="fas fa-calendar-check text-blue-700 text-5xl"></i>
+                    <p class="text-gray-800 mt-4 font-medium text-center">Conference Dates</p>
+                    <p class="font-bold text-lg">17 - 19 Dec 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Primary Objectives Section -->
+    <section class="py-20 px-6 md:px-16 bg-gray-50">
+        <div class="text-center mb-12">
+            <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-green-500">Primary Objectives</h2>
+            <div class="w-20 h-1.5 bg-blue-700 mx-auto mt-4"></div>
+        </div>
+        <div class="relative mx-auto max-w-4xl">
+            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200"></div>
+            <div class="flex flex-col gap-12">
+                <!-- Objective 1 -->
+                <div class="flex items-center gap-8 relative group">
+                     <div class="flex-1 text-right">
+                        <div class="bg-white rounded-lg shadow-lg p-6 transition hover:shadow-2xl hover:bg-blue-50 transform hover:-translate-x-2">
+                            <h3 class="text-2xl font-semibold text-blue-800 mb-2">Advance Research in AI</h3>
+                            <p class="text-gray-600">Promote cutting-edge research in AI, Deep Learning, NLP, Computer Vision, and Generative AI.</p>
+                        </div>
+                    </div>
+                    <div class="bg-blue-700 p-4 rounded-full shadow-lg z-10">
+                        <i class="fas fa-check text-white text-3xl"></i>
+                    </div>
+                   <div class="flex-1"></div>
+                </div>
+                <!-- Objective 2 -->
+                <div class="flex items-center gap-8 relative group">
+                    <div class="flex-1"></div>
+                    <div class="bg-blue-700 p-4 rounded-full shadow-lg z-10">
+                         <i class="fas fa-lightbulb text-white text-3xl"></i>
+                    </div>
+                    <div class="flex-1 text-left">
+                        <div class="bg-white rounded-lg shadow-lg p-6 transition hover:shadow-2xl hover:bg-blue-50 transform hover:translate-x-2">
+                            <h3 class="text-2xl font-semibold text-blue-800 mb-2">Foster Global Collaboration</h3>
+                            <p class="text-gray-600">Connect researchers, academicians, industry experts, and students from around the world.</p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Objective 3 -->
+                <div class="flex items-center gap-8 relative group">
+                     <div class="flex-1 text-right">
+                        <div class="bg-white rounded-lg shadow-lg p-6 transition hover:shadow-2xl hover:bg-blue-50 transform hover:-translate-x-2">
+                            <h3 class="text-2xl font-semibold text-blue-800 mb-2">Address Real-World Challenges</h3>
+                            <p class="text-gray-600">Explore innovative AI solutions for healthcare, smart cities, and sustainable systems.</p>
+                        </div>
+                    </div>
+                    <div class="bg-blue-700 p-4 rounded-full shadow-lg z-10">
+                       <i class="fas fa-cogs text-white text-3xl"></i>
+                    </div>
+                   <div class="flex-1"></div>
+                </div>
+                <!-- Objective 4 -->
+                <div class="flex items-center gap-8 relative group">
+                    <div class="flex-1"></div>
+                    <div class="bg-blue-700 p-4 rounded-full shadow-lg z-10">
+                         <i class="fas fa-book-open text-white text-3xl"></i>
+                    </div>
+                    <div class="flex-1 text-left">
+                        <div class="bg-white rounded-lg shadow-lg p-6 transition hover:shadow-2xl hover:bg-blue-50 transform hover:translate-x-2">
+                            <h3 class="text-2xl font-semibold text-blue-800 mb-2">Encourage High-Quality Publications</h3>
+                            <p class="text-gray-600">Provide a platform for researchers to publish their work in reputed journals, enhancing global visibility.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Objective 5 -->
+                <div class="flex items-center gap-8 relative group">
+                     <div class="flex-1 text-right">
+                        <div class="bg-white rounded-lg shadow-lg p-6 transition hover:shadow-2xl hover:bg-blue-50 transform hover:-translate-x-2">
+                            <h3 class="text-2xl font-semibold text-blue-800 mb-2">Inspire Young Researchers</h3>
+                            <p class="text-gray-600">Offer a stage for students and early-career researchers to present their work and connect with experts.</p>
+                        </div>
+                    </div>
+                    <div class="bg-blue-700 p-4 rounded-full shadow-lg z-10">
+                       <i class="fas fa-user-graduate text-white text-3xl"></i>
+                    </div>
+                   <div class="flex-1"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section class="py-20 px-6 md:px-16 bg-white">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-green-500">Target Audience</h2>
+            <div class="w-20 h-1.5 bg-blue-700 mx-auto mt-4"></div>
+        </div>
+        <div class="flex overflow-x-auto md:overflow-visible md:justify-center items-stretch gap-8 pb-4 max-w-7xl mx-auto">
+            <div class="flex-shrink-0 w-60 md:w-auto md:flex-1 bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                 <div class="mb-4 text-blue-700 text-5xl"><i class="fas fa-users"></i></div>
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">Researchers & Academicians</h3>
+                <p class="text-gray-600 text-sm">Professors, scientists, and research scholars in AI, Machine Learning, and related fields.</p>
+            </div>
+             <div class="flex-shrink-0 w-60 md:w-auto md:flex-1 bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                <div class="mb-4 text-blue-700 text-5xl"><i class="fas fa-industry"></i></div>
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">Industry Professionals</h3>
+                <p class="text-gray-600 text-sm">Tech leaders, data scientists, and engineers in AI and smart technologies.</p>
+            </div>
+             <div class="flex-shrink-0 w-60 md:w-auto md:flex-1 bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                 <div class="mb-4 text-blue-700 text-5xl"><i class="fas fa-user-graduate"></i></div>
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">Students & Young Researchers</h3>
+                <p class="text-gray-600 text-sm">Undergraduate, postgraduate, and PhD students exploring AI applications.</p>
+            </div>
+             <div class="flex-shrink-0 w-60 md:w-auto md:flex-1 bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                <div class="mb-4 text-blue-700 text-5xl"><i class="fas fa-gavel"></i></div>
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">Policy Makers & Government</h3>
+                <p class="text-gray-600 text-sm">Officials in technology policy, digital transformation, and smart city initiatives.</p>
+            </div>
+             <div class="flex-shrink-0 w-60 md:w-auto md:flex-1 bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                <div class="mb-4 text-blue-700 text-5xl"><i class="fas fa-lightbulb"></i></div>
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">AI Enthusiasts & Innovators</h3>
+                <p class="text-gray-600 text-sm">Individuals passionate about the future of AI, machine learning, and smart systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Distinguished Speakers Section -->
+    <section class="py-20 px-6 md:px-16 bg-gray-50">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">Distinguished Speakers at Conference 2026</h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto">Renowned experts from academia and industry leading innovations in Artificial Intelligence, Deep Tech, and Ethical Engineering.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-blue-600">
+                <h3 class="font-semibold text-blue-800 text-lg mb-1">Prof. Riccardo Barberi</h3>
+                <p class="text-gray-600 text-sm">University of Calabria, Italy</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-blue-600">
+                <h3 class="font-semibold text-blue-800 text-lg mb-1">Prof. Alberto Bravin</h3>
+                <p class="text-gray-600 text-sm">University of Bicocca and University of Calabria, Italy</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-blue-600">
+                <h3 class="font-semibold text-blue-800 text-lg mb-1">Prof. Eugenio Vocaturo</h3>
+                <p class="text-gray-600 text-sm">University of Calabria, Italy and CNR NanoTec-Institute of Nanotechnology, Italy</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-blue-600">
+                <h3 class="font-semibold text-blue-800 text-lg mb-1">Dr. Salvatore Nigro</h3>
+                <p class="text-gray-600 text-sm">CNR Nanotec, Italy</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-blue-600">
+                <h3 class="font-semibold text-blue-800 text-lg mb-1">Prof. Ibrahim A Hameed</h3>
+                <p class="text-gray-600 text-sm">NTNU Norway</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-blue-600">
+                <h3 class="font-semibold text-blue-800 text-lg mb-1">Prof. Lalit Garg</h3>
+                <p class="text-gray-600 text-sm">University of Malta</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-blue-600">
+                <h3 class="font-semibold text-blue-800 text-lg mb-1">Prof. Tapan Kumar Gandhi</h3>
+                <p class="text-gray-600 text-sm">IIT Delhi</p>
+            </div>
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-blue-600">
+                <h3 class="font-semibold text-blue-800 text-lg mb-1">Prof. Dharam Singh Jat</h3>
+                <p class="text-gray-600 text-sm">Namibia University of Science and Technology, Namibia</p>
+            </div>
+        </div>
+        <div class="mt-8 bg-blue-50 rounded-lg p-6 max-w-4xl mx-auto border border-blue-200">
+            <p class="text-blue-800 text-center"><strong>Note:</strong> This is a tentative list of speakers. More distinguished speakers will be included as we confirm their participation.</p>
+        </div>
+    </section>
+
+    <!-- Conference Committees Section -->
+    <section id="committees" class="bg-white py-20 px-6 md:px-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">Conference Committees</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">Distinguished members ensuring the highest standards of research excellence.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-600 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Steering Committee</h3>
+                    <div class="text-5xl font-bold text-blue-600">4</div>
+                    <div class="text-gray-600">Members</div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-600 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">National Advisory</h3>
+                    <div class="text-5xl font-bold text-green-600">34</div>
+                    <div class="text-gray-600">Members</div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-600 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">International Advisory</h3>
+                    <div class="text-5xl font-bold text-purple-600">24</div>
+                    <div class="text-gray-600">Members</div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-600 text-center">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Scientific Committee</h3>
+                    <div class="text-5xl font-bold text-orange-600">20</div>
+                    <div class="text-gray-600">Members</div>
+                </div>
+            </div>
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8 text-center shadow-lg">
+                <h3 class="text-3xl font-bold text-blue-800 mb-2">Committee Statistics</h3>
+                <div class="text-7xl font-extrabold text-blue-700">200</div>
+                <div class="text-gray-700 text-xl font-medium">Total Committee Members</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizing Committees -->
+    <section class="py-20 px-4 md:px-12 bg-gray-50">
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-extrabold text-blue-900">Organising Committees</h2>
+            <p class="text-gray-600 text-xl mt-3 max-w-3xl mx-auto">Meet the leaders guiding Conference 2026.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Core Committee</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 hover:border-blue-300"><p class="font-bold text-lg text-blue-800">Chief Patron</p><p class="text-gray-700">Sh. S. Vaitheeswaran, Chairperson, MUJ</p></div>
+                <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 hover:border-blue-300"><p class="font-bold text-lg text-blue-800">Patron</p><p class="text-gray-700">Prof. (Dr.) N. N. Sharma, President, MUJ</p></div>
+                <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 hover:border-blue-300"><p class="font-bold text-lg text-blue-800">Co-Patrons</p><p class="text-gray-700">Prof. (Dr.) Karunakar A. Kotegar, Pro President, MUJ</p><p class="text-gray-700">Prof. (Dr.) Amit Soni, Registrar, MUJ</p></div>
+                <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 hover:border-blue-300"><p class="font-bold text-lg text-blue-800">General Chairs</p><p class="text-gray-700">Prof. (Dr.) Kuldip Singh Sangwan, Dean, FOSTA, MUJ</p><p class="text-gray-700">Prof. (Dr.) Vijaypal Singh Dhaka, Dean, Quality & Accreditations, MUJ</p></div>
+            </div>
+        </div>
+         <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Steering Committee</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Prof. (Dr.) Geeta Sikka, NIT Delhi, India</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Prof. (Dr.) Vineet Sahula, MNIT Jaipur, India</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Prof. (Dr.) Ester Zumpano, University of Calabria, Italy</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Eugenio Vocaturo, CNR-NANOTEC, Italy</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Lalit Garg, University of Malta, Malta</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. M. N. Hooda, BVICAM, New Delhi</div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">International Advisory Committee</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Jaume Anguera, Spain</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Madhu Chetty, Australia</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Prof. Guy A. E. Vandenbosch, Belgium</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Zayar Aung, Russia</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Prof. Chintha Tellambura, Canada</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Prof. Mihaela Albu, Romania</div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">National Advisory Committee</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Ashvini Chaturvedi, NITK, Surathkal</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Preetam Kumar, NIT, Patna</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Ram Bilas Pachori, IIT, Indore</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Prof. Sriram Kumar, NIT Trichy</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Prof. John D'Souza, NITK Surathkal</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Prof. Anil Kumar Dahiya, DIT University</div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Technical Program Committee</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Chair: Prof. Manoj Bohra, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Co-Chair: Dr. Amita Nandal, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Álvaro Rocha, University of Lisbon</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Anand Nayyar, Duy Tan University</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Sameerchand Pudaruth, University of Mauritius</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Brij B. Gupta, Asia University</div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Finance Committee</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Chair: Dr. Renu Kumawat, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Co-Chair: Dr G L Saini, MUJ</div>
+            </div>
+        </div>
+         <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Organizing Committee</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Abhay Sharma, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Amita Nandal, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Bhawana Sharma, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Dinesh Saini, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. G L Saini, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Govind Ram Chhimpa, MUJ</div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Publication Committee</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Chair: Dr. Deepak Sinwar, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Co-Chair: Dr. Suman Bhakar, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Co-Chair: Dr. Pramod Singh Rathore, MUJ</div>
+            </div>
+        </div>
+         <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Publicity Committee</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Chair: Prof. Manoj Kumar Bohra, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Chair: Prof. Dinesh Kumar, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Gautam Kumar, NIT Delhi</div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Hospitality, Transportation & Accommodation</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Chair: Dr. Sourabh Singh Verma, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Co-Chair: Dr. Abhay Sharma, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Rohit Singh, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Mr. Prashant Hemrajani, MUJ</div>
+            </div>
+        </div>
+         <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Web Development & Content Creation</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Chair: Dr. Rohit Mittal, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Co-Chair: Dr Suman Bhakar, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Student Volunteers</div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Workshop Coordination Team</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Chair: Dr. Sandeep Singh, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Co-Chair: Dr Usha Choudhary, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Student Volunteers</div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Registration Committee</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Chair: Dr. Vijay Kumar Sharma, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Co-Chair: Dr. Bhawana Sharma, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Govind Ram Chhimpa, MUJ</div>
+                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr. Rajesh Kumar, MUJ</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conference Program -->
+    <section class="bg-white py-20 px-6 md:px-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4">Conference Program</h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">Explore technical tracks and engage in thought-provoking discussions.</p>
+            </div>
+            <h3 class="text-3xl font-bold mb-8 text-center text-blue-700">Technical Tracks</h3>
+            <div class="space-y-4 mb-12" id="accordion-tracks">
+                <!-- Accordion items will be injected here by JS -->
+            </div>
+            
+            <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Panel Discussions</h2>
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-100 rounded-xl p-8 border border-blue-200">
+                <p class="text-gray-800 text-center mb-6">Conference 2026 will host two signature panel discussions:</p>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg p-4 shadow-md border-l-4 border-blue-600"><h3 class="font-semibold text-lg text-blue-700">(a) Responsible Innovations in Deep Learning: Shaping Smart, Sustainable, and Ethical Futures</h3></div>
+                    <div class="bg-white rounded-lg p-4 shadow-md border-l-4 border-green-600"><h3 class="font-semibold text-lg text-green-700">(b) Ethical AI and IoT: Creating Human-Centric Intelligent Ecosystems</h3></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Fees -->
+    <section class="bg-gray-50 py-20 px-6 md:px-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12"><h2 class="text-4xl md:text-5xl font-bold text-blue-800">Registration Fees</h2></div>
+            <div class="overflow-x-auto bg-white rounded-xl shadow-lg">
+                <table class="min-w-full">
+                    <thead class="bg-blue-700 text-white">
+                        <tr>
+                            <th class="py-3 px-4 text-left">Category</th>
+                            <th class="py-3 px-4 text-center">Early Bird (IEEE / General)</th>
+                            <th class="py-3 px-4 text-center">Regular (IEEE / General)</th>
+                            <th class="py-3 px-4 text-center">Spot (IEEE / General)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-800">
+                        <tr class="bg-blue-50 font-semibold"><td class="py-2 px-4" colspan="4">Authors</td></tr>
+                        <tr><td class="py-2 px-4 pl-8">Full Time Students</td><td class="py-2 px-4 text-center">₹8000 / ₹9600</td><td class="py-2 px-4 text-center">₹10000 / ₹12500</td><td class="py-2 px-4 text-center">₹13000 / ₹16250</td></tr>
+                        <tr class="bg-gray-100"><td class="py-2 px-4 pl-8">Teachers / Research Scholars</td><td class="py-2 px-4 text-center">₹9000 / ₹10800</td><td class="py-2 px-4 text-center">₹11250 / ₹14063</td><td class="py-2 px-4 text-center">₹14625 / ₹18282</td></tr>
+                        <tr><td class="py-2 px-4 pl-8">Industry</td><td class="py-2 px-4 text-center">₹10000 / ₹12000</td><td class="py-2 px-4 text-center">₹12500 / ₹15625</td><td class="py-2 px-4 text-center">₹16250 / ₹20313</td></tr>
+                        <tr class="bg-green-50 font-semibold"><td class="py-2 px-4" colspan="4">Delegates / Attendees only</td></tr>
+                         <tr class="bg-gray-100"><td class="py-2 px-4 pl-8">Student / Research Scholar</td><td class="py-2 px-4 text-center">₹3000 / ₹3600</td><td class="py-2 px-4 text-center">₹3750 / ₹4688</td><td class="py-2 px-4 text-center">₹4500 / ₹5625</td></tr>
+                        <tr><td class="py-2 px-4 pl-8">Academician / Industry</td><td class="py-2 px-4 text-center">₹3500 / ₹4200</td><td class="py-2 px-4 text-center">₹4375 / ₹5469</td><td class="py-2 px-4 text-center">₹5250 / ₹6563</td></tr>
+                    </tbody>
+                </table>
+            </div>
+             <p class="text-sm text-gray-600 mt-2 text-center">**All Registration Fees include GST.</p>
+        </div>
+    </section>
+
+     <!-- Organizing Partners -->
+    <section class="py-20 px-8 md:px-20 bg-white text-center">
+         <p class="text-gray-600 text-lg mb-8">Download Conference 2026 Flyer from <a href="#" class="text-blue-600 font-semibold hover:underline">here</a></p>
+        <h2 class="text-5xl font-semibold text-gray-800 mb-12">Organizing Partners</h2>
+        <div class="flex flex-wrap justify-center items-center gap-16">
+            <div class="flex flex-col items-center"><img src="https://placehold.co/150x80/ffffff/000000?text=MUJ" alt="Symbiosis Institue of Technology Hyderabad" class="h-16 object-contain hover:scale-105 transition"><p class="font-semibold text-lg text-gray-700 mt-4">Symbiosis Institue of Technology Hyderabad, India</p></div>
+            <div class="flex flex-col items-center"><img src="https://placehold.co/150x80/ffffff/000000?text=UNICAL" alt="University of Calabria" class="h-16 object-contain hover:scale-105 transition"><p class="font-semibold text-lg text-gray-700 mt-4">University of Calabria, Italy</p></div>
+            <div class="flex flex-col items-center"><img src="https://placehold.co/150x80/ffffff/000000?text=CNR" alt="CNR Nanotec" class="h-16 object-contain hover:scale-105 transition"><p class="font-semibold text-lg text-gray-700 mt-4">CNR-NANOTEC, Italy</p></div>
+            <div class="flex flex-col items-center"><img src="https://placehold.co/200x80/ffffff/000000?text=NIT+Delhi" alt="NIT Delhi" class="h-16 object-contain hover:scale-105 transition"><p class="font-semibold text-lg text-gray-700 mt-4">National Institute of Technology Delhi, India</p></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-16 px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- About -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Conference 2026</h3>
+                <p class="text-gray-400 text-sm">The 1st International Conference on Deep Learning Innovations for Smart Humanized AI. Join us for a journey into the future of intelligence.</p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                    <li><a href="#committees" class="text-gray-400 hover:text-white transition">Committees</a></li>
+                    <li><a href="#speakers" class="text-gray-400 hover:text-white transition">Speakers</a></li>
+                    <li><a href="#registration" class="text-gray-400 hover:text-white transition">Registration</a></li>
+                </ul>
+            </div>
+            <!-- Venue -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Conference Venue</h3>
+                <p class="text-gray-400 text-sm">
+                    Symbiosis Institue of Technology Hyderabad,<br>
+                    Dehmi Kalan, Near GVK Toll Plaza,<br>
+                    Jaipur-Ajmer Expressway, Jaipur,<br>
+                    Rajasthan 303007, India.
+                </p>
+                <a href="https://maps.app.goo.gl/9q31Z9a9XgX5bA9E6" target="_blank" class="text-blue-400 hover:text-blue-300 mt-2 inline-block text-sm">View on Google Maps</a>
+            </div>
+            <!-- Contact -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contact Organizers</h3>
+                 <div class="space-y-2 text-sm">
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i><a href="mailto:Conference.feb.2026@gmail.com" class="hover:text-white transition">Conference.feb.2026@gmail.com</a></p>
+                    <p class="text-gray-400"><i class="fas fa-phone mr-2"></i>Dr. Renu Kumawat: <a href="tel:+919784584471" class="hover:text-white transition">+91 9784584471</a></p>
+                    <p class="text-gray-400"><i class="fas fa-phone mr-2"></i>Dr. P. K. Shukla: <a href="tel:+917999517129" class="hover:text-white transition">+91 7999517129</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Sub-footer -->
+        <div class="bg-black bg-opacity-20 py-6 px-6 md:px-8">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm gap-4">
+                <p class="text-gray-500">© 2026 Conference Conference. All Rights Reserved.</p>
+                <div class="flex space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuButton.querySelector('i');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            } else {
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times');
+            }
+        });
+
+        // Accordion for Technical Tracks
+        const tracks = [
+            "Track 1: Deep Learning & Generative AI for Smart Healthcare",
+            "Track 2: Computer Vision and AI for Autonomous Systems",
+            "Track 3: Natural Language Processing (NLP) and Conversational AI",
+            "Track 4: Generative AI and Deep Learning for Smart Content Creation",
+            "Track 5: AI for Smart Networking and Communication Systems"
+        ];
+        const accordionContainer = document.getElementById('accordion-tracks');
+        tracks.forEach(track => {
+            const div = document.createElement('div');
+            div.className = 'mb-4 bg-white rounded-xl shadow-md transition-transform transform hover:scale-[1.02] duration-200 border border-gray-200';
+            div.innerHTML = `
+                <div class="cursor-pointer p-5 flex justify-between items-center bg-blue-700 text-white rounded-t-xl hover:bg-blue-600 transition-colors">
+                    <h3 class="text-lg font-semibold">${track}</h3>
+                    <span class="text-xl font-semibold transform transition-transform duration-300"><i class="fas fa-plus"></i></span>
+                </div>
+                <div class="p-6 bg-blue-50 rounded-b-xl hidden">
+                    <p>Detailed description for ${track} will be available soon. Check back for updates on specific topics, submission guidelines, and track chairs.</p>
+                </div>
+            `;
+            accordionContainer.appendChild(div);
+        });
+        
+        accordionContainer.addEventListener('click', function(e) {
+            const header = e.target.closest('.cursor-pointer');
+            if (header) {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+                const isHidden = content.classList.contains('hidden');
+                
+                if (isHidden) {
+                    content.classList.remove('hidden');
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                } else {
+                    content.classList.add('hidden');
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                }
+            }
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+
