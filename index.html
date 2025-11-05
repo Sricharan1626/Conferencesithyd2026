@@ -20,6 +20,43 @@
         .animate-fade-in {
             animation: fadeIn 0.8s ease-out forwards;
         }
+        #location .map-container {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      padding-bottom: 1%;
+    }
+
+    #location iframe {
+      border: 0;
+      width: 100%;
+      height: 400px;
+    }
+    .section-title {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 13px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      padding: 8px 20px;
+      margin: 0;
+      background: #fdeff4;
+      color: #ff6600;
+      display: inline-block;
+      text-transform: uppercase;
+      border-radius: 50px;
+    }
+    .section-title p {
+      margin: 15px auto 0 auto;
+      font-weight: 600;
+       color: #333;
+       font-size: 28px;
+       text-transform: uppercase;
+    }
+
     </style>
 </head>
 <body class="bg-gray-50">
@@ -644,6 +681,17 @@ Full Paper Submission</p>
             <div class="flex flex-col items-center"><img src="https://placehold.co/200x80/ffffff/000000?text=NIT+Delhi" alt="NIT Delhi" class="h-16 object-contain hover:scale-105 transition"><p class="font-semibold text-lg text-gray-700 mt-4">National Institute of Technology Delhi, India</p></div>
         </div>
     </section>
+    <section id="location" class="location">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Location</h2>
+          <p>Event Venue</p>
+        </div>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.3223550310345!2d78.20953397515956!3d17.151348383696117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcbc7c7319c3f89%3A0xfcc6567be7a2cb7d!2sSymbiosis%20Institute%20of%20Technology%20(SIT)%2C%20Hyderabad!5e1!3m2!1sen!2sin!4v1759469948379!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white">
@@ -679,7 +727,7 @@ Full Paper Submission</p>
             <div>
                 <h3 class="text-xl font-bold mb-4">Contact Organizers</h3>
                  <div class="space-y-2 text-sm">
-                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i><a href="mailto:Conference.feb.2026@gmail.com" class="hover:text-white transition">Svramasubbareddy12199@gmail.com</a></p>
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i><a href="mailto:ramasubbareddy@sithyd.siu.edu.in" class="hover:text-white transition">ramasubbareddy@sithyd.siu.edu.in</a></p>
                     <p class="text-gray-400"><i class="fas fa-phone mr-2"></i>Dr. Somula Ramasubbareddy: <a href="tel:+917013594626" class="hover:text-white transition">+91 7013594626</a></p>
                     
                 </div>
