@@ -58,13 +58,28 @@
        text-transform: uppercase;
     }
     
-    @keyframes scroll {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-    }
-    .animate-scroll {
-        animation: scroll 25s linear infinite;
-    }
+    @keyframes newsTickerScroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-news {
+  animation: newsTickerScroll 15s linear infinite;
+}
+    .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background-color: #e5e7eb; /* gray-300 */
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 28px;
+    background-color: #ffffff; /* white */
+}
+
+
 
     </style>
 </head>
@@ -123,13 +138,35 @@
     </p>
 
     <!-- HERO IMAGE -->
-    <div class="mt-8 w-full flex justify-center items-center  mx-auto rounded-t-xl overflow-hidden shadow-2xl">
-        <img src="assets/SIT_Photo.jpg" alt="University Campus Placeholder" class="w-full h-auto object-cover">
+    <div class="mt-8 w-full flex justify-center items-center mx-auto overflow-hidden shadow-2xl rounded-t-xl">
+    <div class="relative w-full overflow-hidden rounded-t-xl h-[570px]"> 
+        <!-- 👆 Set your custom height here (adjust as you like) -->
+
+        <!-- Slider Wrapper -->
+        <div id="slider-wrapper" class="flex transition-transform duration-700 ease-out h-full">
+            <img src="assets/SIT_Photo.jpg" class="w-full h-full object-cover flex-shrink-0">
+            <img src="assets/SIT-Photo1.webp" class="w-full h-full object-cover flex-shrink-0">
+            <img src="assets/SIT_Photo3.webp" class="w-full h-full object-cover flex-shrink-0">
+        </div>
+
+        <!-- Dots OVERLAY -->
+        <div id="slider-dots" 
+             class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">
+        </div>
+
     </div>
+</div>
+
+
+
+
+
+   
 
     <!-- NEWS TICKER (attached directly to image) -->
     <div class="w-full bg-black text-white py-3 shadow-lg rounded-b-xl overflow-hidden relative border-t border-gray-700">
-        <div class="whitespace-nowrap animate-scroll hover:[animation-play-state:paused] relative z-10 font-semibold text-[17px]">
+        <div class="whitespace-nowrap animate-news hover:[animation-play-state:paused] relative z-10 font-semibold text-[17px]">
+
 
             <a href="/sih2025/nodalcenter" class="mx-8 inline-flex items-center hover:text-yellow-300 transition">
                 <img src="/img1/slider/new.gif" class="w-6 h-auto mr-2">
@@ -967,5 +1004,51 @@ Full Paper Submission</p>
                 }
             }
         });
+    
 
-    </script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const slider = document.getElementById("slider-wrapper");
+    const slides = slider.children;
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+
+    // Create dots dynamically
+    const dotsContainer = document.getElementById("slider-dots");
+    let dots = [];
+
+    for (let i = 0; i < totalSlides; i++) {
+        let dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+    }
+
+    function updateDots() {
+        dots.forEach((d, i) => {
+            d.classList.toggle("active", i === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        updateDots();
+    }
+
+    function autoSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(currentIndex);
+    }
+
+    setInterval(autoSlide, 3000); // slide every 3 seconds
+});
+
+
+</script>
+
+    
+    </body>
+    </html>
