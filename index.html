@@ -57,6 +57,14 @@
        font-size: 28px;
        text-transform: uppercase;
     }
+    
+    @keyframes scroll {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+    .animate-scroll {
+        animation: scroll 25s linear infinite;
+    }
 
     </style>
 </head>
@@ -101,15 +109,60 @@
  
     <!-- Hero Section -->
     <section id="home" class="pt-24 md:pt-32 bg-white" style="scroll-margin-top:6rem;"></section>
-        <div class="flex flex-col items-center text-center px-4 pb-12">
-            
-            <h1 class="text-blue-800 text-3xl md:text-5xl font-extrabold w-full max-w-4xl mt-2 animate-fade-in">International Conference on AI in Healthcare (ICAIHC 2027) </h1>
-            <p class="text-gray-700 text-lg md:text-xl mt-4 w-full max-w-3xl animate-fade-in">(Physical Mode)</p>
-            <p class="text-gray-600 text-lg md:text-xl mt-2 w-full max-w-3xl animate-fade-in">Date: 23–24 Januray 2027 | Symbiosis Institute of Technology Hyderabad</p>
-            <div class="mt-8 w-full max-w-9xl flex justify-center items-center mx-auto rounded-xl overflow-hidden shadow-2xl">
-                <img src="assets/SIT_Photo.jpg" alt="University Campus Placeholder" class="w-full h-auto object-cover">
-            </div>
+
+<div class="flex flex-col items-center text-center px-4 pb-12">
+
+    <h1 class="text-blue-800 text-3xl md:text-5xl font-extrabold w-full max-w-4xl mt-2 animate-fade-in">
+        International Conference on AI in Healthcare (ICAIHC 2027)
+    </h1>
+
+    <p class="text-gray-700 text-lg md:text-xl mt-4 w-full max-w-3xl animate-fade-in">(Physical Mode)</p>
+
+    <p class="text-gray-600 text-lg md:text-xl mt-2 w-full max-w-3xl animate-fade-in">
+        Date: 23–24 January 2027 | Symbiosis Institute of Technology Hyderabad
+    </p>
+
+    <!-- HERO IMAGE -->
+    <div class="mt-8 w-full flex justify-center items-center  mx-auto rounded-t-xl overflow-hidden shadow-2xl">
+        <img src="assets/SIT_Photo.jpg" alt="University Campus Placeholder" class="w-full h-auto object-cover">
+    </div>
+
+    <!-- NEWS TICKER (attached directly to image) -->
+    <div class="w-full bg-black text-white py-3 shadow-lg rounded-b-xl overflow-hidden relative border-t border-gray-700">
+        <div class="whitespace-nowrap animate-scroll hover:[animation-play-state:paused] relative z-10 font-semibold text-[17px]">
+
+            <a href="/sih2025/nodalcenter" class="mx-8 inline-flex items-center hover:text-yellow-300 transition">
+                <img src="/img1/slider/new.gif" class="w-6 h-auto mr-2">
+                Click here to view the Nodal Center Locations for SIH 2025
+            </a>
+
+            <span class="mx-6">|</span>
+
+            <a href="/pdf/SIH2025_Letter_from_Chairman_AICTE_semester_exam.pdf" class="mx-8 inline-flex items-center hover:text-yellow-300 transition">
+                <img src="/img1/slider/new.gif" class="w-6 h-auto mr-2">
+                Request Letter from Chairman, AICTE regarding scheduling of examination during SIH 2025 Grand Finale
+            </a>
+
+            <span class="mx-6">|</span>
+
+            <a href="#" class="mx-8 inline-flex items-center hover:text-yellow-300 transition">
+                <img src="/img1/slider/new.gif" class="w-6 h-auto mr-2">
+                New updates will be posted soon
+            </a>
+
         </div>
+    </div>
+
+</div>
+
+
+        </div>
+        <!-- News Ticker Section -->
+
+
+<!-- Scroll Animation -->
+
+
     </section>
 
     <!-- About Section -->
