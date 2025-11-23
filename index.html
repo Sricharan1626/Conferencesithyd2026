@@ -698,30 +698,73 @@ Full Paper Submission</p>
             </div>
         </div>
         <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
-            <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Technical Program Committee</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Chair: Dr.Mayuri Mehta , Surat, India</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Co-Chair: Dr. Prasanalakshmi Balaji, Saudi Arabia</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr.Manisha Guduri, USA</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr.Samarjeet Borah,SMIT,India</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr.Dinesh Reddy,SRM University, AP,India</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr.Krunal Vaghela, Marwadi University,India</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr.Swapna Mudrakola, India</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr.krishna Keerthi Ch,Novartis,India</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr.Sandhya, Christ University, India</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr.Ashwin Raiyani, Nirma University, India</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">Dr.JayDave, Rai University,India</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"> Prof.Mehul S. Raval,Ahmedabad University,India</div>
-                 <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"> Dr.Rashmi Sahay, ICFAI Foundation for Higher Education,India</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"> Dr.Shilpa Bade-Gite, Symbiosis International University,India</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"> Dr.Srinivasa Rao Dammavalam, VNRVJIET,India</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"> Dr.Ghanshyam Tejani, Yuan Ze University,Taiwan</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"> Dr.Kunal Mankodiya,University of Rhode Island, USA</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"> Prof.Dr.Supavadee Aramvith,Chulalongkorn University, Thailand</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"> Dr.Khanita Duangchaemkarn,University of Phayao,Thailand</div>
-                <div class="bg-blue-50 p-4 rounded-lg text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2"> Dr.Lakshmana Kumar Ramasamy, Higher Colleges of Technology, UAE</div>
-            </div>
+    <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">
+        Technical Program Committee
+    </h3>
+
+    <div id="tpc-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <!-- FIRST 9 ITEMS (3 rows) → always visible -->
+        <!-- Visible Row 1 -->
+        <div class="card bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">Chair: Dr.Mayuri Mehta , Surat, India</div>
+        <div class="card bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">Co-Chair: Dr. Prasanalakshmi Balaji, Saudi Arabia</div>
+        <div class="card bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">Dr.Manisha Guduri, USA</div>
+
+        <!-- Visible Row 2 -->
+        <div class="card bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">Dr.Samarjeet Borah, SMIT, India</div>
+        <div class="card bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">Dr.Dinesh Reddy, SRM University, AP, India</div>
+        <div class="card bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">Dr.Krunal Vaghela, Marwadi University, India</div>
+
+        <!-- Visible Row 3 -->
+        <div class="card bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">Dr.Swapna Mudrakola, India</div>
+        <div class="card bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">Dr.Krishna Keerthi Ch, Novartis, India</div>
+        <div class="card bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">Dr.Sandhya, Christ University, India</div>
+
+
+        <!-- REMAINING ITEMS (hidden initially) -->
+        <div class="more hidden bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">
+            Dr.Ashwin Raiyani, Nirma University, India
         </div>
+        <div class="more hidden bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">
+            Dr.JayDave, Rai University, India
+        </div>
+        <div class="more hidden bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">
+            Prof.Mehul S. Raval, Ahmedabad University, India
+        </div>
+        <div class="more hidden bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">
+            Dr.Rashmi Sahay, ICFAI Foundation for Higher Education, India
+        </div>
+        <div class="more hidden bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">
+            Dr.Shilpa Bade-Gite, SIU, India
+        </div>
+        <div class="more hidden bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">
+            Dr.Srinivasa Rao Dammavalam, VNRVJIET, India
+        </div>
+        <div class="more hidden bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">
+            Dr.Ghanshyam Tejani, Yuan Ze University, Taiwan
+        </div>
+        <div class="more hidden bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">
+            Dr.Kunal Mankodiya, University of Rhode Island, USA
+        </div>
+        <div class="more hidden bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">
+            Prof.Dr.Supavadee Aramvith, Chulalongkorn University, Thailand
+        </div>
+        <div class="more hidden bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">
+            Dr.Khanita Duangchaemkarn, University of Phayao, Thailand
+        </div>
+        <div class="more hidden bg-blue-50 p-4 rounded-lg text-center hover:shadow-xl hover:-translate-y-2 transition">
+            Dr.Lakshmana Kumar Ramasamy, HCT, UAE
+        </div>
+
+    </div>
+
+    <!-- Show More Button -->
+    <div class="text-center mt-6">
+        <button id="show-more-btn" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            Show More
+        </button>
+    </div>
+</div>
         <div class="bg-white rounded-xl shadow-lg p-8 mb-10 max-w-6xl mx-auto">
             <h3 class="text-3xl font-bold text-blue-800 mb-6 pb-3 border-b-2 border-blue-200 text-center">Organizing Committee</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -1047,6 +1090,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setInterval(autoSlide, 5000); // slide every 3 seconds
 });
+const btn = document.getElementById('show-more-btn');
+    const hiddenItems = document.querySelectorAll('.more');
+
+    btn.addEventListener('click', () => {
+        hiddenItems.forEach(item => item.classList.remove('hidden'));
+        btn.classList.add('hidden');
+    });
 
 
 </script>
