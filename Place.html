@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICAIHC 2027</title>
+    <link rel="icon" href="assets/logo-sit.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/Fdistinguishedss2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Simple fade-in animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        #location .map-container {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      padding-bottom: 1%;
+    }
+
+    #location iframe {
+      border: 0;
+      width: 100%;
+      height: 400px;
+    }
+    .section-title {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 13px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      padding: 8px 20px;
+      margin: 0;
+      background: #fdeff4;
+      color: #ff6600;
+      display: inline-block;
+      text-transform: uppercase;
+      border-radius: 50px;
+    }
+    .section-title p {
+      margin: 15px auto 0 auto;
+      font-weight: 600;
+       color: #333;
+       font-size: 28px;
+       text-transform: uppercase;
+    }
+    
+    @keyframes newsTickerScroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-news {
+  animation: newsTickerScroll 15s linear infinite;
+}
+    .animate-news {
+            animation: newsTickerScroll 25s linear infinite;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 9999px;
+            background-color: rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .dot.active {
+            width: 28px;
+            background-color: #ffffff;
+        }
+        
+        /* Card Hover Effects */
+        .place-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .place-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+
+
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-md z-50">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="#home" class="flex items-center space-x-2">
+                <img src="assets/logo.svg" alt="ICAIHC 2026" class="h-20 w-auto">
+                
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-gray-700 hover:text-blue-600 transition-colors font-medium" href="#home">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
+                <a href="#committees" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Committees</a>
+                <a href="#committees" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Places</a>
+                 <div class="relative group">
+                    <button class="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center">
+                        For Authors
+                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute left-0 top-full bg-white shadow-lg rounded-md py-2 w-48 z-10 border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity">
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="#">Submission</a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="#">Call for Papers</a>
+                    </div>
+                </div>
+                <a href="#" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-300">Submit Paper</a>
+            </div>
+            <button id="mobile-menu-button" class="text-gray-800 text-2xl md:hidden z-[110]" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 absolute top-full left-0 w-full shadow-lg">
+            <a href="index.html" class="block text-gray-700 hover:text-blue-600 py-2">Home</a>
+            <a href="index.html/#about" class="block text-gray-700 hover:text-blue-600 py-2">About</a>
+            <a href="#committees" class="block text-gray-700 hover:text-blue-600 py-2">Committees</a>
+            <a href="#" class="block text-gray-700 hover:text-blue-600 py-2">Submission</a>
+             <a href="#" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all w-full text-center">Submit Paper</a>
+        </div>
+    </nav>
+ 
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 md:pt-32 bg-white" style="scroll-margin-top:6rem;"></section>
+
+<div class="flex flex-col items-center text-center px-4 pb-12">
+
+    <h1 class="text-blue-800 text-3xl md:text-5xl font-extrabold w-full max-w-4xl mt-2 animate-fade-in">
+        International Conference on AI in Healthcare (ICAIHC 2027)
+    </h1>
+
+    <p class="text-gray-700 text-lg md:text-xl mt-4 w-full max-w-3xl animate-fade-in">(Physical Mode)</p>
+
+    <p class="text-gray-600 text-lg md:text-xl mt-2 w-full max-w-3xl animate-fade-in">
+        Date: 23–24 January 2027 | Symbiosis Institute of Technology Hyderabad
+    </p>
+
+    <!-- HERO IMAGE -->
+    <div class="mt-8 w-full flex justify-center items-center mx-auto overflow-hidden shadow-2xl rounded-t-xl">
+    <div class="relative w-full overflow-hidden rounded-t-xl h-[570px]"> 
+        <!-- 👆 Set your custom height here (adjust as you like) -->
+
+        <!-- Slider Wrapper -->
+        <div id="slider-wrapper" class="flex transition-transform duration-700 ease-out h-full">
+            <img src="assets/SIT_Photo.jpg" class="w-full h-full object-cover flex-shrink-0">
+            <img src="assets/SIT_Photo1.JPG" class="w-full h-full object-cover flex-shrink-0">
+            <img src="assets/SIT_Photo3.webp" class="w-full h-full object-cover flex-shrink-0">
+        </div>
+
+        <!-- Dots OVERLAY -->
+        <div id="slider-dots" 
+             class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">
+        </div>
+
+    </div>
+</div>
+ <div class="w-full bg-black text-white py-3 shadow-lg rounded-b-xl overflow-hidden relative border-t border-gray-700">
+        <div class="whitespace-nowrap animate-news hover:[animation-play-state:paused] relative z-10 font-semibold text-[17px]">
+
+
+            <a href="/sih2025/nodalcenter" class="mx-8 inline-flex items-center hover:text-yellow-300 transition">
+                <img src="/img1/slider/new.gif" class="w-6 h-auto mr-2">
+                Click here to view the Nodal Center Locations for SIH 2025
+            </a>
+
+            <span class="mx-6">|</span>
+
+            <a href="/pdf/SIH2025_Letter_from_Chairman_AICTE_semester_exam.pdf" class="mx-8 inline-flex items-center hover:text-yellow-300 transition">
+                <img src="/img1/slider/new.gif" class="w-6 h-auto mr-2">
+                Request Letter from Chairman, AICTE regarding scheduling of examination during SIH 2025 Grand Finale
+            </a>
+
+            <span class="mx-6">|</span>
+
+            <a href="#" class="mx-8 inline-flex items-center hover:text-yellow-300 transition">
+                <img src="/img1/slider/new.gif" class="w-6 h-auto mr-2">
+                New updates will be posted soon
+            </a>
+
+        </div>
+    </div>
+
+</div>
+</div>
+
+    <section id="places" class="py-20 bg-gray-50 scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="section-title">
+                    <h2>Discover</h2>
+                    <p>Places to Visit in Hyderabad</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Card 1: Statue of Equality -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 place-card flex flex-col h-full">
+                        <div class="h-64 overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1626085699316-259160a0f823?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Statue of Equality" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-blue-800 shadow-sm flex items-center">
+                                <i class="fas fa-car mr-1"></i> ~24 km
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Statue of Equality</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
+                                A 216-foot tall statue of the 11th-century Vaishnavaite saint Ramanuja. Located in Muchintal, it is one of the closest major landmarks to the conference venue, offering a spiritual and architectural marvel.
+                            </p>
+                            <a href="https://maps.app.goo.gl/Pz3e7Q6z8kQ6z8kQ6" target="_blank" class="mt-auto w-full block text-center bg-blue-50 text-blue-600 py-3 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                <i class="fas fa-location-arrow mr-2"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Charminar -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 place-card flex flex-col h-full">
+                        <div class="h-64 overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1572508589584-94d778209083?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Charminar" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-blue-800 shadow-sm flex items-center">
+                                <i class="fas fa-car mr-1"></i> ~45 km
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Charminar</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
+                                The global icon of Hyderabad, constructed in 1591. This monument and mosque is known for its intricate architecture and the bustling Laad Bazaar surrounding it, famous for pearls and bangles.
+                            </p>
+                            <a href="https://www.google.com/maps/search/Charminar,+Hyderabad" target="_blank" class="mt-auto w-full block text-center bg-blue-50 text-blue-600 py-3 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                <i class="fas fa-location-arrow mr-2"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Golconda Fort -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 place-card flex flex-col h-full">
+                        <div class="h-64 overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1631518196603-9d48b71d9990?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Golconda Fort" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-blue-800 shadow-sm flex items-center">
+                                <i class="fas fa-car mr-1"></i> ~48 km
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Golconda Fort</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
+                                A fortified citadel and an early capital city of the Qutb Shahi dynasty. Famous for its acoustic engineering, where a clap at the entrance can be heard at the highest point, a kilometer away.
+                            </p>
+                            <a href="https://www.google.com/maps/search/Golconda+Fort" target="_blank" class="mt-auto w-full block text-center bg-blue-50 text-blue-600 py-3 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                <i class="fas fa-location-arrow mr-2"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Ramoji Film City -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 place-card flex flex-col h-full">
+                        <div class="h-64 overflow-hidden relative group">
+                            <img src="" 
+                                 alt="Ramoji Film City" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-blue-800 shadow-sm flex items-center">
+                                <i class="fas fa-car mr-1"></i> ~75 km
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Ramoji Film City</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
+                                Certified by Guinness World Records as the world's largest film studio complex. A fun-filled destination with live shows, thematic sets, adventure parks, and cinematic grandeur.
+                            </p>
+                            <a href="https://www.google.com/maps/search/Ramoji+Film+City" target="_blank" class="mt-auto w-full block text-center bg-blue-50 text-blue-600 py-3 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                <i class="fas fa-location-arrow mr-2"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Hussain Sagar & Buddha Statue -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 place-card flex flex-col h-full">
+                        <div class="h-64 overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1549429184-a144e503383a?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Buddha Statue" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-blue-800 shadow-sm flex items-center">
+                                <i class="fas fa-car mr-1"></i> ~50 km
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Hussain Sagar Lake</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
+                                A heart-shaped lake built by Ibrahim Quli Qutb Shah. It features a massive monolith statue of Buddha in the middle, accessible by boat. The nearby necklace road offers beautiful evening views.
+                            </p>
+                            <a href="https://www.google.com/maps/search/Hussain+Sagar+Buddha+Statue" target="_blank" class="mt-auto w-full block text-center bg-blue-50 text-blue-600 py-3 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                <i class="fas fa-location-arrow mr-2"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Chowmahalla Palace -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 place-card flex flex-col h-full">
+                        <div class="h-64 overflow-hidden relative group">
+                            <img src="https://images.unsplash.com/photo-1628151239853-294025a17621?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Chowmahalla Palace" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-blue-800 shadow-sm flex items-center">
+                                <i class="fas fa-car mr-1"></i> ~44 km
+                            </div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Chowmahalla Palace</h3>
+                            <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
+                                The seat of the Asaf Jahi dynasty, this palace was where the Nizams entertained their official guests. It is renowned for its unique style, elegance, and the vintage car collection of the Nizam.
+                            </p>
+                            <a href="https://www.google.com/maps/search/Chowmahalla+Palace" target="_blank" class="mt-auto w-full block text-center bg-blue-50 text-blue-600 py-3 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                <i class="fas fa-location-arrow mr-2"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="mt-12 text-center">
+                     <p class="text-gray-500 text-sm italic">
+                        <i class="fas fa-info-circle mr-1"></i> Distances are approximate from Symbiosis Institute of Technology, Nandigama campus. Travel times may vary based on traffic.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+<footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-16 px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- About -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">ICAIHC</h3>
+                <p class="text-gray-400 text-sm">International Conference on AI in Healthcare (ICAIHC 2027)</p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                    <li><a href="#committees" class="text-gray-400 hover:text-white transition">Committees</a></li>
+                    <li><a href="#speakers" class="text-gray-400 hover:text-white transition">Speakers</a></li>
+                    <li><a href="#registration" class="text-gray-400 hover:text-white transition">Registration</a></li>
+                </ul>
+            </div>
+            <!-- Venue -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Conference Venue</h3>
+                <p class="text-gray-400 text-sm">
+                    Survey Number 292, Off Bangalore Highway,
+                    Modallaguda (V), Nandigama (M), <br>
+                    Rangareddy Distbr, Hyderabad,<br>
+                    Telangana, India, Pin Code : 509217
+                </p>
+                <a href="https://maps.app.goo.gl/SUthxxUUNDHbzbkRA" target="_blank" class="text-blue-400 hover:text-blue-300 mt-2 inline-block text-sm">View on Google Maps</a>
+            </div>
+            <!-- Contact -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contact Organizers</h3>
+                 <div class="space-y-2 text-sm">
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i><a href="mailto:ramasubbareddy@sithyd.siu.edu.in" class="hover:text-white transition">ramasubbareddy@sithyd.siu.edu.in</a></p>
+                    <p class="text-gray-400"><i class="fas fa-phone mr-2"></i>Dr. Somula Ramasubbareddy: <a href="tel:+917013594626" class="hover:text-white transition">+91 7013594626</a></p>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Sub-footer -->
+        <div class="bg-black bg-opacity-20 py-6 px-6 md:px-8">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm gap-4">
+                <p class="text-gray-500">© 2026 Conference Conference. All Rights Reserved.</p>
+                <div class="flex space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuButton.querySelector('i');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenuIcon.classList.remove('fa-times');
+                mobileMenuIcon.classList.add('fa-bars');
+            } else {
+                mobileMenuIcon.classList.remove('fa-bars');
+                mobileMenuIcon.classList.add('fa-times');
+            }
+        });
+
+        // ===================================================================
+        // START: Your Conference Track Information
+        //I have formatted your provided text into the following data structure.
+        // ===================================================================
+        
+    
+
+        // This is the original accordion click listener, it doesn't need to change.
+        accordionContainer.addEventListener('click', function(e) {
+            const header = e.target.closest('.cursor-pointer');
+            if (header) {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+                const isHidden = content.classList.contains('hidden');
+                
+                if (isHidden) {
+                    content.classList.remove('hidden');
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                } else {
+                    content.classList.add('hidden');
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                }
+            }
+        });
+    
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const slider = document.getElementById("slider-wrapper");
+    const slides = slider.children;
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+
+    // Create dots dynamically
+    const dotsContainer = document.getElementById("slider-dots");
+    let dots = [];
+
+    for (let i = 0; i < totalSlides; i++) {
+        let dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+    }
+
+    function updateDots() {
+        dots.forEach((d, i) => {
+            d.classList.toggle("active", i === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        updateDots();
+    }
+
+    function autoSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(currentIndex);
+    }
+
+    setInterval(autoSlide, 5000); // slide every 3 seconds
+});
+const btn = document.getElementById('show-more-btn');
+    const hiddenItems = document.querySelectorAll('.more');
+
+    btn.addEventListener('click', () => {
+        hiddenItems.forEach(item => item.classList.remove('hidden'));
+        btn.classList.add('hidden');
+    });
+
+
+</script>
+
+    
+    </body>
+    </html>
