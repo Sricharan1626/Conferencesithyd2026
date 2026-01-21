@@ -69,6 +69,13 @@
   font-size: 28px;
   text-transform: uppercase;
 }
+.section-title p {
+      margin: 15px auto 0 auto;
+      font-weight: 600;
+       color: #333;
+       font-size: 28px;
+       text-transform: uppercase;
+    }
 
 /* Mobile optimization */
 @media (min-width: 768px) {
@@ -83,6 +90,10 @@
   }
 }
 
+@keyframes newsTickerScroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
 .animate-news {
   animation: newsTickerScroll 15s linear infinite;
 }
@@ -124,7 +135,7 @@
                     </button>
                     <div class="absolute left-0 top-full bg-white shadow-lg rounded-md py-2 w-48 z-10 border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity">
                         <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="#">Submission</a>
-                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="#">Call for Papers</a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="Call_for_paper.html">Call for Papers</a>
                     </div>
                 </div>
                 <a href="#" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-300">Submit Paper</a>
@@ -141,6 +152,7 @@
             <a href="Place.html?scroll=places" class="block text-gray-700 hover:text-blue-600 py-2">Places</a>
             <a href="#" class="block text-gray-700 hover:text-blue-600 py-2">Submission</a>
              <a href="#" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all w-full text-center">Submit Paper</a>
+             <a href="Call_for_paper.html" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all w-full text-center">Call for paper</a>
         </div>
     </nav>
  

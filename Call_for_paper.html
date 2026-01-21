@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICAIHC 2027</title>
+    <link rel="icon" href="assets/logo-sit.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/Fdistinguishedss2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Simple fade-in animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        #location .map-container {
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      padding-bottom: 1%;
+    }
+
+    
+
+    #location iframe {
+      border: 0;
+      width: 100%;
+      height: 400px;
+    }
+    .section-title {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 13px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      padding: 8px 20px;
+      margin: 0;
+      background: #fdeff4;
+      color: #ff6600;
+      display: inline-block;
+      text-transform: uppercase;
+      border-radius: 50px;
+    }
+    .section-title p {
+      margin: 15px auto 0 auto;
+      font-weight: 600;
+       color: #333;
+       font-size: 28px;
+       text-transform: uppercase;
+    }
+    
+    @keyframes newsTickerScroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-news {
+  animation: newsTickerScroll 15s linear infinite;
+}
+    .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background-color: #e5e7eb; /* gray-300 */
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 28px;
+    background-color: #ffffff; /* white */
+}
+
+
+
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm shadow-md z-50">
+        <div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+            <a href="#home" class="flex items-center space-x-2">
+                <img src="assets/logo.svg" alt="ICAIHC 2026" class="h-20 w-auto">
+                
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-gray-700 hover:text-blue-600 transition-colors font-medium" href="#home">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
+                <a href="#committees" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Committees</a>
+                <a href="Place.html?scroll=places" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Places</a>
+                 <div class="relative group">
+                    <button class="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center">
+                        For Authors
+                        <svg class="ml-1 h-4 w-4 transform transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute left-0 top-full bg-white shadow-lg rounded-md py-2 w-48 z-10 border border-gray-100 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity">
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="#">Submission</a>
+                        <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600" href="#">Call for Papers</a>
+                    </div>
+                </div>
+                <a href="#" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-300">Submit Paper</a>
+            </div>
+            <button id="mobile-menu-button" class="text-gray-800 text-2xl md:hidden z-[110]" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-6 absolute top-full left-0 w-full shadow-lg">
+            <a href="#home" class="block text-gray-700 hover:text-blue-600 py-2">Home</a>
+            <a href="#about" class="block text-gray-700 hover:text-blue-600 py-2">About</a>
+            <a href="#committees" class="block text-gray-700 hover:text-blue-600 py-2">Committees</a>
+            <a href="Place.html?scroll=places" class="block text-gray-700 hover:text-blue-600 py-2">Places</a>
+            <a href="#" class="block text-gray-700 hover:text-blue-600 py-2">Submission</a>
+             <a href="#" class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all w-full text-center">Submit Paper</a>
+        </div>
+    </nav>
+ 
+    <!-- Hero Section -->
+    <main class="pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto space-y-12">
+
+        <div class="text-center space-y-8 animate-fade-in">
+            <div class="space-y-4">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+                    Call for Papers <span class="text-blue-600">(ICAIHC 2027)</span>
+                </h1>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Join us in advancing the future of healthcare through Artificial Intelligence.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+                <a href="#" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg hover:shadow-blue-200 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group">
+                    <i class="fas fa-upload group-hover:animate-bounce"></i>
+                    Paper Submission Link
+                </a>
+                <a href="#" class="w-full sm:w-auto px-8 py-4 bg-white border-2 border-blue-100 hover:border-blue-600 text-gray-700 hover:text-blue-600 font-bold rounded-xl shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center gap-2">
+                    <i class="fas fa-file-pdf"></i>
+                    Download Brochure
+                </a>
+            </div>
+        </div>
+
+        <section class="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-gray-100 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
+            
+            <div class="relative z-10">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                    <span class="w-1.5 h-8 bg-blue-600 rounded-full"></span>
+                    Conference Scope
+                </h2>
+                <p class="text-gray-600 leading-relaxed text-lg text-justify">
+                    ICAIHC 2027 focuses on industrial and upcoming frontier technologies, applications of AI in diagnostics, patient care systems, and computational intelligence in medicine. The objectives of the conference are to provide high-quality research and professional interactions for the advancement of science, technology, and fellowship. Papers with new research results are encouraged for submission.
+                </p>
+            </div>
+        </section>
+
+        <section class="space-y-6">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-900">Technical Topics</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 max-w-5xl mx-auto">
+                
+                <details class="group bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-lg open:ring-2 open:ring-blue-100">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer bg-gradient-to-r from-gray-50 to-white hover:from-blue-50 transition-colors list-none">
+                        <span class="font-bold text-lg text-gray-800 flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 text-sm font-bold">01</span>
+                            Track 1: AI for Medical Diagnostics and Imaging
+                        </span>
+                        <span class="transition-transform duration-300 group-open:rotate-180">
+                            <i class="fas fa-chevron-down text-blue-400"></i>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-2 text-gray-600 bg-white border-t border-gray-50">
+                        <ul class="grid md:grid-cols-2 gap-3 list-disc list-inside">
+                            <li>Deep learning for radiology and histopathology</li>
+                            <li>Medical image classification and object detection</li>
+                            <li>3D reconstruction from medical scans (MRI, CT, PET)</li>
+                            <li>Multi-modal imaging fusion and analysis</li>
+                            <li>AI-driven diagnostic systems for ophthalmology and dermatology</li>
+                            <li>Vision transformers and GANs in medical imaging</li>
+                            <li>Automated screening tools for X-ray, CT, and ultrasound</li>
+                            <li>Radiomics and imaging biomarkers discovery</li>
+                            <li>Real-time AI assistance in surgical imaging</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-lg open:ring-2 open:ring-blue-100">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer bg-gradient-to-r from-gray-50 to-white hover:from-blue-50 transition-colors list-none">
+                        <span class="font-bold text-lg text-gray-800 flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 text-sm font-bold">02</span>
+                            Track 2: ML in Clinical Decision Support and Predictive Analytics
+                        </span>
+                        <span class="transition-transform duration-300 group-open:rotate-180">
+                            <i class="fas fa-chevron-down text-blue-400"></i>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-2 text-gray-600 bg-white border-t border-gray-50">
+                        <ul class="grid md:grid-cols-2 gap-3 list-disc list-inside">
+                            <li>Machine learning for electronic health records (EHR) analytics</li>
+                            <li>Clinical decision support systems (CDSS)</li>
+                            <li>Disease progression modeling and survival prediction</li>
+                            <li>AI for drug response prediction and personalized treatment</li>
+                            <li>Reinforcement learning for treatment recommendation</li>
+                            <li>Anomaly detection in clinical data</li>
+                            <li>Prognostic and diagnostic models using multi-omics data</li>
+                            <li>Temporal pattern analysis in ICU and emergency data</li>
+                            <li>NLP for clinical text mining and summarization</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-lg open:ring-2 open:ring-blue-100">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer bg-gradient-to-r from-gray-50 to-white hover:from-blue-50 transition-colors list-none">
+                        <span class="font-bold text-lg text-gray-800 flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 text-sm font-bold">03</span>
+                            Track 3: IoT, Edge, and Wearable Technologies in Healthcare
+                        </span>
+                        <span class="transition-transform duration-300 group-open:rotate-180">
+                            <i class="fas fa-chevron-down text-blue-400"></i>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-2 text-gray-600 bg-white border-t border-gray-50">
+                        <ul class="grid md:grid-cols-2 gap-3 list-disc list-inside">
+                            <li>IoT-based smart health monitoring systems</li>
+                            <li>Body sensor networks and wearable devices</li>
+                            <li>Edge AI for low-latency medical applications</li>
+                            <li>Mobile health (mHealth) applications with real-time feedback</li>
+                            <li>Remote patient monitoring using AI and IoT</li>
+                            <li>Secure and scalable architectures for medical IoT</li>
+                            <li>Federated learning for distributed medical data</li>
+                            <li>Smart ambient assisted living environments</li>
+                            <li>Data fusion and contextual reasoning in healthcare IoT</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-lg open:ring-2 open:ring-blue-100">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer bg-gradient-to-r from-gray-50 to-white hover:from-blue-50 transition-colors list-none">
+                        <span class="font-bold text-lg text-gray-800 flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 text-sm font-bold">04</span>
+                            Track 4: Ethics, Explainability, and Human-Centric AI in Medicine
+                        </span>
+                        <span class="transition-transform duration-300 group-open:rotate-180">
+                            <i class="fas fa-chevron-down text-blue-400"></i>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-2 text-gray-600 bg-white border-t border-gray-50">
+                        <ul class="grid md:grid-cols-2 gap-3 list-disc list-inside">
+                            <li>Explainable AI (XAI) in medical diagnostics</li>
+                            <li>AI fairness and bias mitigation in healthcare models</li>
+                            <li>Ethical frameworks for deploying AI in clinical settings</li>
+                            <li>Human-in-the-loop and collaborative intelligence</li>
+                            <li>Trustworthy and transparent AI systems</li>
+                            <li>Privacy-preserving machine learning in healthcare</li>
+                            <li>Regulatory compliance and responsible AI governance</li>
+                            <li>Societal and policy implications of AI in medicine</li>
+                            <li>AI for underserved and rural healthcare applications</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-lg open:ring-2 open:ring-blue-100">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer bg-gradient-to-r from-gray-50 to-white hover:from-blue-50 transition-colors list-none">
+                        <span class="font-bold text-lg text-gray-800 flex items-center gap-3">
+                            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600 text-sm font-bold">05</span>
+                            Track 5: Integrating Traditional Wellness Systems With Intelligent Healthcare Technologies
+                        </span>
+                        <span class="transition-transform duration-300 group-open:rotate-180">
+                            <i class="fas fa-chevron-down text-blue-400"></i>
+                        </span>
+                    </summary>
+                    <div class="p-6 pt-2 text-gray-600 bg-white border-t border-gray-50">
+                        <ul class="grid md:grid-cols-2 gap-3 list-disc list-inside">
+                            <li>AI applications in Ayurveda, Yoga, and Naturopathy</li>
+                            <li>Computational intelligence for holistic wellness assessment</li>
+                            <li>Mind–body health modelling using AI (including Heartfulness & Meditation)</li>
+                            <li>Diagnostics and decision-support systems for AYUSH practitioners</li>
+                            <li>Machine learning models for herbal medicine & formulations</li>
+                            <li>Intelligent systems for lifestyle diseases, mental well-being, and preventive care</li>
+                            <li>Integration of AYUSH with IoT, wearable sensors, and digital therapeutics</li>
+                            <li>Evidence-based research frameworks for traditional healthcare</li>
+                            <li>AI-driven personalized wellness recommendations</li>
+                            <li>Indigenous knowledge systems & digital transformation</li>
+                        </ul>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+    </main>
+
+<footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto py-16 px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- About -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">ICAIHC</h3>
+                <p class="text-gray-400 text-sm">International Conference on AI in Healthcare (ICAIHC 2027)</p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="index.html#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                    <li><a href="index.html#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                    <li><a href="index.html#committees" class="text-gray-400 hover:text-white transition">Committees</a></li>
+                    <li><a href="index.html#speakers" class="text-gray-400 hover:text-white transition">Speakers</a></li>
+                    <li><a href="index.html#registration" class="text-gray-400 hover:text-white transition">Registration</a></li>
+                    <li><a href="CMT_ACKNOWLEDGMENT.html" class="text-gray-400 hover:text-white transition">CMT_ACKNOWLEDGMENT</a></li>
+                </ul>
+            </div>
+            <!-- Venue -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Conference Venue</h3>
+                <p class="text-gray-400 text-sm">
+                    Survey Number 292, Off Bangalore Highway,
+                    Modallaguda (V), Nandigama (M), <br>
+                    Rangareddy Distbr, Hyderabad,<br>
+                    Telangana, India, Pin Code : 509217
+                </p>
+                <a href="https://maps.app.goo.gl/SUthxxUUNDHbzbkRA" target="_blank" class="text-blue-400 hover:text-blue-300 mt-2 inline-block text-sm">View on Google Maps</a>
+            </div>
+            <!-- Contact -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contact Organizers</h3>
+                 <div class="space-y-2 text-sm">
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i><a href="mailto:ramasubbareddy@sithyd.siu.edu.in" class="hover:text-white transition">ramasubbareddy@sithyd.siu.edu.in</a></p>
+                    <p class="text-gray-400"><i class="fas fa-phone mr-2"></i>Dr. Somula Ramasubbareddy: <a href="tel:+917013594626" class="hover:text-white transition">+91 7013594626</a></p>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Sub-footer -->
+        <div class="bg-black bg-opacity-20 py-6 px-6 md:px-8">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm gap-4">
+                <p class="text-gray-500">© 2026 Conference Conference. All Rights Reserved.</p>
+                <div class="flex space-x-5">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>
